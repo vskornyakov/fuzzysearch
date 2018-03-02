@@ -1,0 +1,64 @@
+<head>
+    <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+
+<form id="main" v-cloak>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Организация</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" v-model="searchString" placeholder="Введите наименование организации">
+  </div>
+
+<br>
+
+<table class="table">
+  <thead>
+      <tr>
+          <th scope="col">Поиск по точному совпадению</th>
+          <th scope="col">Нечеткий поиск</th>
+      </tr>
+  </thead>
+  <tbody>
+    <td width=50%>
+      <div id="scrollbox">
+          <div id="content">
+            <ul class="list-group">
+              <li class="list-group-item" v-for="counterparty in filteredCounterparties">
+                {{ counterparty.name }}
+              </li>
+            </ul>
+          </div>
+        </div>
+    </td>
+    <td width=50%>
+        <div id="scrollbox_fuzzy">
+            <div id="content1">
+              <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center" v-for="counterparty in filteredFuzzy">
+                  {{ counterparty.name }}
+                  <span v-if="counterparty.count != 0" class="badge badge-primary badge-pill">{{counterparty.count}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+    </td>
+  </tbody>
+</table>
+
+
+
+
+</form>
+
+<script src="vue.js"></script>
+<script src='data.1.js'></script>
+<!--script src='data.js'></script-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+
+

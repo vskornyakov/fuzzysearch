@@ -1,0 +1,25 @@
+[v-cloak] {
+    display: none;
+}
+
+/*
+#container{
+    width: 600px;
+    margin: 0px auto;
+    padding: 40px 0;
+}
+*/
+
+#scrollbox{
+    height: 800px;
+    overflow:auto; overflow-x:hidden;
+}
+
+#scrollbox_fuzzy{
+    height: 800px;
+    overflow:auto; overflow-x:hidden;
+}
+
+ul{
+    list-style-type: none;
+}
